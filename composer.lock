@@ -4,8 +4,44 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0fdfc7c0adccf730609ea30bd40a7ed",
+    "content-hash": "2321492d17291548d7134cb480306b96",
     "packages": [
+        {
+            "name": "acme/calendar",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/Calendar",
+                "reference": "a09f1e4db3bbffa1968b40c6d508a4e3d351a881"
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Acme\\Calendar\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Acme\\Calendar\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tool.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
         {
             "name": "brick/math",
             "version": "0.11.0",
@@ -8824,7 +8860,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "acme/calendar": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
