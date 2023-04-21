@@ -17,6 +17,6 @@ Add variables to .env
 
 **Run commands**
 
-composer install
-npm install
+- composer install
+- npm install
 
