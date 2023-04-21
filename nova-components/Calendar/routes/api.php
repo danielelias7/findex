@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +18,20 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function (Request $request) {
 //     //
 // });
+
+
+Route::get('/calendario', function () {
+    $users = DB::table('users')->get();
+
+    $events = [];
+    foreach ($users as $user) {
+        $events[] = [
+            'title' => $user->name,
+            'start' => date('Y-m-d', strtotime($user->created_at)),
+            // 'start'=> '2023-04-21'
+        ];
+    }
+
+    return response()->json($events);
+});
+
